@@ -1,0 +1,3 @@
+# Install inside the separately configured upstream SUPIR Python environment.
+# The upstream environment supplies Pillow, torch and its own model dependencies.
+psycopg[binary]>=3.1,<3.2
