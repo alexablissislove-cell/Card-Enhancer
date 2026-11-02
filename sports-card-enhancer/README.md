@@ -226,6 +226,17 @@ npm run build
 # Deploy dist/ folder to CDN or static hosting
 ```
 
+For Vercel, configure the project with:
+- **Root Directory**: `sports-card-enhancer/app` (relative to the repository root)
+- **Framework Preset**: Vite (not Express)
+- **Install Command**: `pnpm install --frozen-lockfile`
+- **Build Command**: `pnpm run build`
+- **Output Directory**: `dist`
+
+The frontend build includes TypeScript checks; keep these enabled. The FastAPI
+backend must be deployed separately. Set `VITE_API_URL` to its public HTTPS URL
+before building the frontend; otherwise API requests default to `localhost:8000`.
+
 ### Backend (Docker)
 ```dockerfile
 FROM python:3.9-slim
