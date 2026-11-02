@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 import { Toaster } from '@/components/ui/sonner';
 
 import { HolographicBackground } from './components/HolographicBackground';
+import { SupirStudio } from './components/SupirStudio';
 import { BatchUploader } from './components/BatchUploader';
 import { JobMonitor } from './components/JobMonitor';
 import { ImagePreview } from './components/ImagePreview';
@@ -181,7 +182,7 @@ function App() {
               {/* Status indicator */}
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/50 border border-cyan-500/20">
                 <div className="w-2 h-2 rounded-full bg-cyan-400 pulse-glow" />
-                <span className="text-xs text-cyan-400/80 mono tracking-wider">SYSTEM ONLINE</span>
+                <span className="text-xs text-cyan-400/80 mono tracking-wider">STUDIO READY</span>
               </div>
             </div>
           </div>
@@ -222,6 +223,7 @@ function App() {
                     )}
                     <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 to-magenta-500 scale-x-0 group-data-[state=active]:scale-x-100 transition-transform" />
                   </TabsTrigger>
+                  <TabsTrigger value="supir" className="px-6 py-3 text-gray-400 data-[state=active]:text-cyan-400">SUPIR</TabsTrigger>
                   {selectedJob && (
                     <TabsTrigger 
                       value="preview"
@@ -261,6 +263,10 @@ function App() {
                 </div>
               </TabsContent>
 
+              <TabsContent value="supir" className="h-full m-0">
+                <SupirStudio />
+              </TabsContent>
+
               <TabsContent value="monitor" className="h-full m-0 p-6">
                 <JobMonitor 
                   jobs={jobs}
@@ -295,7 +301,7 @@ function App() {
             <div className="flex items-center gap-6">
               <span className="flex items-center gap-2 text-cyan-400/60">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                <span className="mono tracking-wider">API CONNECTED</span>
+                <span className="mono tracking-wider">SUPIR · GPU WORKER REQUIRED</span>
               </span>
               <span className="text-gray-600 mono">v2.0.0</span>
             </div>

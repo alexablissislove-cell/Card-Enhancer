@@ -52,3 +52,8 @@ htmlcov/
 .DS_Store
 Thumbs.db
 ```
+.vercel
+
+# Frontend dependencies and generated assets
+node_modules/
+dist/
